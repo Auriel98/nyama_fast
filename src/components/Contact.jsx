@@ -21,7 +21,7 @@ export default function Contact() {
           <h2 className="section-title">RESTONS<br />EN CONTACT</h2>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'start' }}>
+        <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'start' }}>
           {/* Infos */}
           <motion.div initial={{ opacity: 0, x: -40 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7 }}>
             <h3 style={{ fontFamily: 'Bebas Neue', fontSize: '1.8rem', color: 'var(--orange)', marginBottom: 24, letterSpacing: 2 }}>NYAMA FAST LIBREVILLE</h3>
@@ -56,7 +56,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} style={{ background: 'var(--noir-soft)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 20, padding: 36 }}>
               <h3 style={{ fontFamily: 'Bebas Neue', fontSize: '1.5rem', marginBottom: 24, letterSpacing: 2 }}>ENVOYER UN MESSAGE</h3>
               {[
-                { label: 'Votre nom', type: 'text', placeholder: 'Auriel ' },
+                { label: 'Votre nom', type: 'text', placeholder: 'Auriel' },
                 { label: 'Email ou téléphone', type: 'text', placeholder: 'Auriel@example.com ou +241...' },
               ].map(f => (
                 <div key={f.label} style={{ marginBottom: 20 }}>
@@ -64,7 +64,7 @@ export default function Contact() {
                   <input type={f.type} placeholder={f.placeholder} required style={{
                     width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
                     borderRadius: 10, padding: '12px 16px', color: 'white', fontFamily: 'DM Sans', fontSize: '0.95rem',
-                    outline: 'none', transition: 'border 0.2s',
+                    outline: 'none', transition: 'border 0.2s', boxSizing: 'border-box',
                   }}
                     onFocus={e => e.target.style.borderColor = 'var(--orange)'}
                     onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
@@ -75,7 +75,7 @@ export default function Contact() {
                 <textarea placeholder="Votre message, question ou commande spéciale..." required rows={4} style={{
                   width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
                   borderRadius: 10, padding: '12px 16px', color: 'white', fontFamily: 'DM Sans', fontSize: '0.95rem',
-                  outline: 'none', resize: 'vertical', transition: 'border 0.2s',
+                  outline: 'none', resize: 'vertical', transition: 'border 0.2s', boxSizing: 'border-box',
                 }}
                   onFocus={e => e.target.style.borderColor = 'var(--orange)'}
                   onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
@@ -87,7 +87,43 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
-      <style>{`@media(max-width:768px){ #contact > div > div:last-child { grid-template-columns: 1fr !important; gap: 40px !important; } }`}</style>
+
+      <style>{`
+        .contact-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+          align-items: start;
+        }
+
+        @media (max-width: 768px) {
+          .contact-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+
+          #contact {
+            padding: 80px 6% !important;
+          }
+
+          #contact h3 {
+            text-align: center;
+          }
+
+          #contact .section-title {
+            font-size: clamp(2rem, 10vw, 3rem);
+          }
+
+          #contact form {
+            padding: 24px !important;
+          }
+
+          #contact form input,
+          #contact form textarea {
+            font-size: 16px !important; /* évite le zoom auto sur iOS */
+          }
+        }
+      `}</style>
     </section>
   )
 }

@@ -10,13 +10,14 @@ export default function Livraison() {
     <section id="livraison" ref={ref} style={{ padding: '100px 5%', background: 'var(--noir)', position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', right: '-5%', bottom: '-10%', width: 500, height: 500, background: 'radial-gradient(circle, rgba(255,107,0,0.07) 0%, transparent 70%)', borderRadius: '50%' }} />
 
-      <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+      <div className="livraison-grid" style={{ maxWidth: 1200, margin: '0 auto' }}>
+
         {/* Left */}
         <motion.div initial={{ opacity: 0, x: -40 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7 }}>
           <span className="tag">Service de Livraison</span>
           <h2 className="section-title" style={{ marginBottom: 24 }}>LIVRÉS<br />CHEZ VOUS</h2>
           <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: 40 }}>
-            Nos livreurs internes sillonnent Libreville pour vous apporter vos plats chauds rapidement. 
+            Nos livreurs internes sillonnent Libreville pour vous apporter vos plats chauds rapidement.
             Fiabilité et rapidité sont notre priorité.
           </p>
 
@@ -42,11 +43,14 @@ export default function Livraison() {
         </motion.div>
 
         {/* Right - Map visual */}
-        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={inView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.7, delay: 0.2 }}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.7, delay: 0.2 }}
           style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,107,0,0.2)', borderRadius: 24, padding: 40, textAlign: 'center' }}>
           <div style={{ fontSize: 80, marginBottom: 20 }}>🗺️</div>
           <h3 style={{ fontFamily: 'Bebas Neue', fontSize: '2rem', color: 'var(--orange)', marginBottom: 16 }}>ZONE DE LIVRAISON</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+          <div className="zones-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {['Centre-ville', 'Quartier Louis', 'Akanda', 'Owendo', 'Nzeng-Ayong', 'PK5-PK12'].map(zone => (
               <div key={zone} style={{ background: 'rgba(255,107,0,0.08)', border: '1px solid rgba(255,107,0,0.2)', padding: '10px 16px', borderRadius: 10, fontSize: '0.9rem', fontWeight: 500 }}>
                 📍 {zone}
@@ -58,7 +62,46 @@ export default function Livraison() {
           </div>
         </motion.div>
       </div>
-      <style>{`@media(max-width:768px){ #livraison > div > div { grid-template-columns: 1fr !important; gap: 40px !important; } }`}</style>
+
+      <style>{`
+        .livraison-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 80px;
+          align-items: center;
+        }
+
+        @media (max-width: 768px) {
+          #livraison {
+            padding: 80px 6% !important;
+          }
+
+          .livraison-grid {
+            grid-template-columns: 1fr !important;
+            gap: 48px !important;
+          }
+
+          #livraison .section-title {
+            font-size: clamp(2.2rem, 10vw, 3rem);
+          }
+
+          #livraison .tag {
+            display: inline-block;
+          }
+
+          /* Carte zones : 1 colonne sur très petit écran */
+          @media (max-width: 420px) {
+            .zones-grid {
+              grid-template-columns: 1fr !important;
+            }
+          }
+
+          #livraison .btn-primary {
+            display: block;
+            text-align: center;
+          }
+        }
+      `}</style>
     </section>
   )
 }
