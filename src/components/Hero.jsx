@@ -5,29 +5,48 @@ export default function Hero() {
   return (
     <section id="hero" style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #0D0D0D 0%, #1a0a00 50%, #0D0D0D 100%)',
-      display: 'flex', alignItems: 'center',
       position: 'relative', overflow: 'hidden',
+      display: 'flex', alignItems: 'center',
       padding: '100px 5% 60px',
     }}>
-      {/* Background pattern */}
+
+      {/* ── IMAGE DE FOND ── */}
+      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        <img
+          src="/images/bg_hero.png"
+          alt=""
+          style={{
+            width: '100%', height: '100%',
+            objectFit: 'cover', objectPosition: 'center',
+            filter: 'blur(2px) brightness(0.55) saturate(1.2)',
+            transform: 'scale(1.06)',
+          }}
+        />
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(135deg, rgba(13,13,13,0.82) 0%, rgba(26,10,0,0.65) 50%, rgba(13,13,13,0.80) 100%)',
+        }} />
+      </div>
+
+      {/* ── DOT PATTERN ── */}
       <div style={{
-        position: 'absolute', inset: 0, opacity: 0.04,
+        position: 'absolute', inset: 0, zIndex: 1, opacity: 0.06,
         backgroundImage: 'radial-gradient(circle, #FF6B00 1px, transparent 1px)',
         backgroundSize: '40px 40px',
       }} />
 
-      {/* Orange glow */}
+      {/* ── ORANGE GLOW ── */}
       <div style={{
-        position: 'absolute', right: '-10%', top: '20%',
+        position: 'absolute', right: '-10%', top: '20%', zIndex: 1,
         width: 600, height: 600,
-        background: 'radial-gradient(circle, rgba(255,107,0,0.15) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(255,107,0,0.18) 0%, transparent 70%)',
         borderRadius: '50%',
       }} />
 
-      <div className="hero-grid" style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
+      {/* ── CONTENU ── */}
+      <div className="hero-grid" style={{ maxWidth: 1200, margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 }}>
 
-        {/* Logo image mobile (visible uniquement sur mobile, au-dessus du texte) */}
+        {/* Image mobile */}
         <motion.div
           className="hero-logo-mobile"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -37,8 +56,8 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-            style={{ filter: 'drop-shadow(0 20px 40px rgba(255,107,0,0.4))' }}>
-            <img src="/images/logo_nyama.png" alt="Nyama Fast" style={{ width: 180, height: 180, objectFit: 'contain' }} />
+            style={{ borderRadius: 20, overflow: 'hidden', boxShadow: '0 20px 40px rgba(255,107,0,0.4)' }}>
+            <img src="/images/bg_hero.png" alt="Nyama Fast" style={{ width: 220, height: 160, objectFit: 'cover', display: 'block' }} />
           </motion.div>
         </motion.div>
 
@@ -56,7 +75,7 @@ export default function Hero() {
             <span style={{ color: 'var(--blanc)' }}>IRRÉSISTIBLE.</span>
           </h1>
 
-          <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, marginBottom: 36, maxWidth: 480 }}>
+          <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: 36, maxWidth: 480 }}>
             Fusion unique entre la cuisine africaine traditionnelle et les saveurs internationales.
             Burgers, plats locaux, wraps — livrés en 30 à 60 min sur Libreville.
           </p>
@@ -84,7 +103,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right — Logo desktop avec badges */}
+        {/* Right — Image desktop avec badges */}
         <motion.div
           className="hero-right"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -95,8 +114,21 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-            style={{ filter: 'drop-shadow(0 30px 60px rgba(255,107,0,0.4))' }}>
-            <img src="/images/logo_nyama.png" alt="Nyama Fast" style={{ width: 'clamp(180px, 25vw, 320px)', height: 'clamp(180px, 25vw, 320px)', objectFit: 'contain' }} />
+            style={{
+              borderRadius: 24, overflow: 'hidden',
+              boxShadow: '0 30px 60px rgba(255,107,0,0.5)',
+              border: '1px solid rgba(255,107,0,0.3)',
+            }}>
+            <img
+              src="/images/bg_hero.png"
+              alt="Nyama Fast"
+              style={{
+                width: 'clamp(180px, 25vw, 380px)',
+                height: 'clamp(180px, 25vw, 380px)',
+                objectFit: 'cover',
+                display: 'block',
+              }}
+            />
           </motion.div>
 
           {/* Floating badges */}
@@ -125,7 +157,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 1.5, repeat: Infinity }}
-        style={{ position: 'absolute', bottom: 30, left: '50%', transform: 'translateX(-50%)', color: 'var(--orange)', cursor: 'pointer' }}
+        style={{ position: 'absolute', bottom: 30, left: '50%', transform: 'translateX(-50%)', color: 'var(--orange)', cursor: 'pointer', zIndex: 2 }}
         onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}>
         <ArrowDown size={28} />
       </motion.div>
@@ -149,12 +181,10 @@ export default function Hero() {
             gap: 0 !important;
           }
 
-          /* Affiche le logo compact en haut sur mobile */
           .hero-logo-mobile {
             display: flex !important;
           }
 
-          /* Cache la colonne droite (logo large avec badges) sur mobile */
           .hero-right {
             display: none !important;
           }

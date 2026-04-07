@@ -12,7 +12,7 @@ const categories = [
       { name: 'Le Bacon Burger', desc: 'Un cheeseburger auquel on ajoute des tranches de bacon grillé et croustillant.', price: 6500, popular: true, image: '/images/menu/bacon-burger.png' },
       { name: 'Le Chicken Burger', desc: 'Un filet de poulet (pané ou grillé), de la mayonnaise.', price: 5500, popular: true, image: '/images/menu/chiken-burger.png' },
       { name: 'Le Veggie Burger', desc: 'Une galette de légumes, de légumineuses (pois chiches, haricots rouges) ou un substitut de viande (type "Beyond Meat").', price: 5500, popular: true, image: '/images/menu/veggie-burger.png' },
-      { name: 'Le Burger Gourmet', desc: "Ingrédients nobles comme du foie gras, de la truffe, du bleu d'Auvergne, ou des oignons confits. Le pain est souvent une brioche artisanale.", price: 6500, popular: false, image: '/images/menu/burger-gourmet.png' },
+      { name: 'Le Burger Gourmet', desc: "Ingrédients nobles comme du foie gras, de la truffe, du bleu d'Auvergne, ou des oignons confits. Le pain est souvent une brioche artisanale.", price: 6500, popular: false, image: '/images/menu/burger-gourmet.jpeg' },
       { name: 'Le Smash Burger', desc: "Le steak n'est pas épais ; il est écrasé très finement sur une plaque brûlante pour créer une croûte caramélisée et ultra-savoureuse.", price: 6500, popular: false, image: '/images/menu/smash-burger.png' },
     ]
   },
@@ -47,6 +47,7 @@ const categories = [
       { name: 'Bananes Plantain', desc: 'Bananes plantain grillées dorées', price: 1200, popular: false, image: '/images/menu/bananes-plantain.jpeg' },
       { name: 'Eau', desc: 'Eau fraîche', price: 500, popular: false, image: '/images/menu/eau.png' },
       { name: 'Soda', desc: 'Coca, Fanta, Sprite…', price: 800, popular: false, image: '/images/menu/boissons.jpeg' },
+
       { name: 'Jus Local', desc: 'Jus de fruits locaux naturels', price: 1000, popular: true, image: '/images/menu/boissons.png' },
     ]
   },

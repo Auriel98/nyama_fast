@@ -7,7 +7,7 @@ const atouts = [
   { icon: <Globe size={28} />, title: 'Fusion Afrique-Monde', desc: 'Cuisine africaine traditionnelle rencontre les saveurs internationales pour une expérience unique.' },
   { icon: <Zap size={28} />, title: 'Service Ultra-Rapide', desc: 'Commandez en ligne, payez et recevez votre repas en 30 à 60 minutes à domicile.' },
   { icon: <Heart size={28} />, title: 'Produits Locaux', desc: 'Nous valorisons les producteurs locaux : viande, poisson, alloco, plantain du Gabon.' },
-  { icon: <Users size={28} />, title: 'Pour Tous les Budgets', desc: 'De 500 FCFA à 4 500 FCFA, chacun trouve son repas idéal chez Street Bites.' },
+  { icon: <Users size={28} />, title: 'Pour Tous les Budgets', desc: 'De 500 FCFA à 4 500 FCFA, chacun trouve son repas idéal chez Nyama fast.' },
 ]
 
 export default function About() {
