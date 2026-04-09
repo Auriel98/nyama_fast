@@ -46,9 +46,95 @@ const categories = [
       { name: 'Alloco', desc: 'Bananes plantain frites traditionnelles', price: 1000, popular: true, image: '/images/menu/alloco.jpeg' },
       { name: 'Bananes Plantain', desc: 'Bananes plantain grillées dorées', price: 1200, popular: false, image: '/images/menu/bananes-plantain.jpeg' },
       { name: 'Eau', desc: 'Eau fraîche', price: 500, popular: false, image: '/images/menu/eau.png' },
-      { name: 'Soda', desc: 'Coca, Fanta, Sprite…', price: 800, popular: false, image: '/images/menu/boissons.jpeg' },
+      {
+    name: 'Coca-Cola',
+    desc: 'Boisson gazeuse en canette de 33cl, servie bien fraîche.',
+    price: 800,
+    popular: false,
+    image: '/images/menu/coca.jpeg'
+  },
+  {
+    name: 'Fanta',
+    desc: 'Boisson gazeuse sucrée en canette de 33cl, goût orange.',
+    price: 800,
+    popular: false,
+    image: '/images/menu/fanta.jpeg'
+  },
+  {
+    name: 'Sprite',
+    desc: 'Boisson gazeuse citronnée en canette de 33cl, très rafraîchissante.',
+    price: 800,
+    popular: false,
+    image: '/images/menu/sprite.jpeg'
+  },
 
-      { name: 'Jus Local', desc: 'Jus de fruits locaux naturels', price: 1000, popular: true, image: '/images/menu/boissons.png' },
+  {
+    name: "D'jino Cocktail",
+    desc: "Cannette de 33 cl, mélange exotique de fruits (ananas, banane, mangue, orange).",
+    price: 1000,
+    popular: true,
+    image: '/images/menu/djino.jpeg'
+  },
+
+  {
+    name: "Smoothie Fraise",
+    desc: "Boisson lactée ou onctueuse à la fraise, rose vif, accompagnée de fraises entières et d'un effet de jaillissement.",
+    price: 800,
+    popular: true,
+    image: '/images/menu/fraise.jpeg'
+  },
+
+  {
+    name: "Cocktail Menthe-Citron",
+    desc: "Boisson désaltérante aux zestes de citron vert, feuilles de menthe fraîche et glace pilée.",
+    price: 1000,
+    popular: true,
+    image: '/images/menu/mojito.jpeg'
+  },
+
+  // 🍹 JUS LOCAUX (verres)
+  {
+    name: 'Lipton Peach (Pêche)',
+    desc: ' Cannette jaune et bleue, thé glacé à la pêche, sans sucre ajouté',
+    price: 1000,
+    popular: true,
+    image: '/images/menu/lipton.jpeg'
+  },
+  {
+    name: 'Schweppes Tônica ',
+    desc: 'Cannette jaune et blanche, eau tonique pétillante, amertume subtile et notes de citron.',
+    price: 1000,
+    popular: true,
+    image: '/images/menu/sheeppes.jpeg'
+  },
+  {
+    name: 'Jus de Papaye',
+    desc: 'Jus onctueux et velouté à la couleur orangée intense, servi frais avec des tranches de papaye mûre.',
+    price: 1000,
+    popular: true,
+    image: '/images/menu/papaye.jpeg'
+  },
+  {
+    name: 'Jus d’Orange',
+    desc: 'Jus naturel d’orange pressée, servi frais dans un verre.',
+    price: 1000,
+    popular: true,
+    image: '/images/menu/orange.jpeg'
+  },
+  {
+    name: "Jus d'Ananas",
+    desc: "Jus jaune vif pressé, garni d'une tranche d'ananas frais pour une touche tropicale et acidulée.",
+    price: 1000,
+    popular: true,
+    image: '/images/menu/ananas.jpeg'
+  },
+  {
+    name: "Jus de Raisin",
+    desc: "Boisson à la robe pourpre profonde, élaborée à partir de raisins noirs et blancs fraîchement cueillis.",
+    price: 1000,
+    popular: true,
+    image: '/images/menu/raisin.jpeg'
+  }
     ]
   },
 ]
